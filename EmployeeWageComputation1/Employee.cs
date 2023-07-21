@@ -3,6 +3,7 @@ namespace EmployeeWageComputation1
 {
 	public class Employee
 	{
+        // Use of private variables //
 		private const int FULL_TIME = 1;
         private const int PART_TIME = 2;
         private const int RATE_PER_HOUR = 20;
@@ -11,7 +12,7 @@ namespace EmployeeWageComputation1
         private const int TOTAL_WORKING_DAY = 20;
         private const int TOTAL_WORKING_HOURS = 100;
         private int empHours = 0;
-
+        //Use of method inside a class//
         public void MonthlyWage()
         {
             int totalHours = 0;
