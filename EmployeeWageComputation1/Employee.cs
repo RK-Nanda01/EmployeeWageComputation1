@@ -3,42 +3,60 @@ namespace EmployeeWageComputation1
 {
 	public class Employee
 	{
-		public const int IS_PRESENT = 1;
-        public const int PART_TIME = 2;
-        public const int RATE_PER_HOUR = 20;
-		public const int FULL_DAY_HOUR = 8;
-        public const int PART_TIME_HOUR = 4;
+		private const int FULL_TIME = 1;
+        private const int PART_TIME = 2;
+        private const int RATE_PER_HOUR = 20;
+		private const int FULL_DAY_HOUR = 8;
+        private const int PART_TIME_HOUR = 4;
+        private const int TOTAL_WORKING_DAY = 20;
+        private int empHours = 0;
 
-        public void PartTime()
-		{
-			Random rnd = new Random();
-			int num = rnd.Next(0, 3);
-			int dailyWage = 0;
-			switch(num)
-			{
+        public void MonthlyWage()
+        {
+            int totalHours = 0;
+            int monthlyWage=0;
+            int day;
 
-				case 1:
-					{
-                        dailyWage = RATE_PER_HOUR * FULL_DAY_HOUR;
-                        Console.WriteLine($"DailyWage of Full Time Employee is {dailyWage} ");
-                        break;
-					}
+            for (day = 1; day <= TOTAL_WORKING_DAY; day++)
+            {
+                Random rnd = new Random();
+                int rnd_num = rnd.Next(0, 3);
 
-				case 2:
-					{
-                        dailyWage = RATE_PER_HOUR * PART_TIME_HOUR;
-                        Console.WriteLine($"DailyWage of Part Time Employee is {dailyWage}");
-						break;
-                    }
-				default:
-					{
-                        Console.WriteLine($"DailyWage of Absent Employee is {dailyWage}");
-						break;
+                switch (rnd_num)
+                {
 
-                    }
-			}
+                    case PART_TIME:
+                        {
+                            empHours = PART_TIME_HOUR;
+                            break;
+                        }
 
-		}
-	}
+                    case FULL_TIME:
+                        {
+                            empHours = FULL_DAY_HOUR;
+                            break;
+                        }
+
+                    default:
+                        {
+                            empHours = 0;
+                            break;
+                        }
+
+
+                }
+
+                totalHours += empHours;
+            }
+
+            monthlyWage = totalHours * RATE_PER_HOUR;
+
+            Console.WriteLine($"Total Wage for {day - 1} is {monthlyWage}");
+            
+
+
+
+        }
+    }
 }
 
