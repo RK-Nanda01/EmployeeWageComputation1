@@ -9,15 +9,16 @@ namespace EmployeeWageComputation1
 		private const int FULL_DAY_HOUR = 8;
         private const int PART_TIME_HOUR = 4;
         private const int TOTAL_WORKING_DAY = 20;
+        private const int TOTAL_WORKING_HOURS = 100;
         private int empHours = 0;
 
         public void MonthlyWage()
         {
             int totalHours = 0;
-            int monthlyWage=0;
-            int day;
+            int totalWage=0;
+            int day=1;
 
-            for (day = 1; day <= TOTAL_WORKING_DAY; day++)
+            while (totalHours <= TOTAL_WORKING_HOURS && day <= TOTAL_WORKING_DAY)
             {
                 Random rnd = new Random();
                 int rnd_num = rnd.Next(0, 3);
@@ -47,15 +48,12 @@ namespace EmployeeWageComputation1
                 }
 
                 totalHours += empHours;
+                day++;
             }
 
-            monthlyWage = totalHours * RATE_PER_HOUR;
+            totalWage = totalHours * RATE_PER_HOUR;
 
-            Console.WriteLine($"Total Wage for {day - 1} is {monthlyWage}");
-            
-
-
-
+            Console.WriteLine($"Total Wage for {day - 1} is {totalWage}");
         }
     }
 }
