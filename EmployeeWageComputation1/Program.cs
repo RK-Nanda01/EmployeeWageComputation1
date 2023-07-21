@@ -4,10 +4,13 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to Employee Wage Computation!");
-        Employee e = new Employee("Deloitte", 20, 20, 100);
-        Employee f = new Employee("Google", 30, 20, 100);
-        e.MonthlyWage(); // Shows total wage of a company
-        f.MonthlyWage();
+        EmpWageBuilder e = new EmpWageBuilder();
+        e.AddCompanyDetails("Deloitte", 20, 20, 100);
+        e.AddCompanyDetails("Google", 30, 20, 100);
+        e.AddCompanyDetails("Zudio", 40, 20, 100);
+        e.SetWageForAllCompany();
+
+
         Console.ReadLine();
 
     }
