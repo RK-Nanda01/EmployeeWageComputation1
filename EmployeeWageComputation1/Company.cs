@@ -12,7 +12,8 @@ namespace EmployeeWageComputation1
 		public int totalWorkingDays;
 		public int totalWorkingHour;
 		public int totalWage;
-       
+        public List<int> dailyWages = new List<int>();
+        
         public Company(string name, int ratePerHour, int totalWorkingDays, int totalWorkingHour)
 		{
 			this.name = name;
@@ -64,6 +65,7 @@ namespace EmployeeWageComputation1
 
                 }
 
+                dailyWages[day] = empHours * this.ratePerHour;
                 totalHours += empHours;
                 day++;
             }
