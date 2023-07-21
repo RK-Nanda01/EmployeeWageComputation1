@@ -65,7 +65,7 @@ namespace EmployeeWageComputation1
 
                 }
 
-                dailyWages[day] = empHours * this.ratePerHour;
+                dailyWages.Add(empHours * this.ratePerHour);
                 totalHours += empHours;
                 day++;
             }

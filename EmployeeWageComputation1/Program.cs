@@ -9,7 +9,7 @@ class Program
         e.AddCompanyDetails("Google", 30, 20, 100);
         e.AddCompanyDetails("Zudio", 40, 20, 100);
         e.SetWageForAllCompany();
-
+        e.GetDeatilByName("Google");
 
         Console.ReadLine();
 
