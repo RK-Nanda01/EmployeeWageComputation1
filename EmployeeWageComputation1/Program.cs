@@ -5,7 +5,7 @@ class Program
     {
         Console.WriteLine("Welcome to Employee Wage Computation!");
         Employee e = new Employee();
-        e.IsPresent();
+        e.DailyWage();
         Console.ReadLine();
 
     }
