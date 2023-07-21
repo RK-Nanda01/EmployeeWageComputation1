@@ -14,21 +14,29 @@ namespace EmployeeWageComputation1
 			Random rnd = new Random();
 			int num = rnd.Next(0, 3);
 			int dailyWage = 0;
-			if(num == IS_PRESENT)
+			switch(num)
 			{
-				dailyWage = RATE_PER_HOUR * FULL_DAY_HOUR;
-				Console.WriteLine($"DailyWage of Employee is {dailyWage} ");
-			}
-			else if(num == PART_TIME)
-			{
-                dailyWage =  RATE_PER_HOUR* PART_TIME_HOUR;
-                Console.WriteLine($"DailyWage of Employee is {dailyWage}");
-            }
 
-			else
-			{
-                Console.WriteLine($"DailyWage of Employee is {dailyWage}");
-            }
+				case 1:
+					{
+                        dailyWage = RATE_PER_HOUR * FULL_DAY_HOUR;
+                        Console.WriteLine($"DailyWage of Full Time Employee is {dailyWage} ");
+                        break;
+					}
+
+				case 2:
+					{
+                        dailyWage = RATE_PER_HOUR * PART_TIME_HOUR;
+                        Console.WriteLine($"DailyWage of Part Time Employee is {dailyWage}");
+						break;
+                    }
+				default:
+					{
+                        Console.WriteLine($"DailyWage of Absent Employee is {dailyWage}");
+						break;
+
+                    }
+			}
 
 		}
 	}
